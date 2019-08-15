@@ -2,13 +2,13 @@
 
 namespace Blok\LaravelPackageGenerator\Commands;
 
+use Blok\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
+use Blok\LaravelPackageGenerator\Commands\Traits\CopiesSkeleton;
+use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
+use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithGit;
+use Blok\LaravelPackageGenerator\Commands\Traits\ManipulatesPackageFolder;
 use Exception;
 use Illuminate\Console\Command;
-use Blok\LaravelPackageGenerator\Commands\Traits\CopiesSkeleton;
-use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithGit;
-use Blok\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
-use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
-use Blok\LaravelPackageGenerator\Commands\Traits\ManipulatesPackageFolder;
 
 class PackageNew extends Command
 {
