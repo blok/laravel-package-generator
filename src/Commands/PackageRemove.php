@@ -2,12 +2,12 @@
 
 namespace Blok\LaravelPackageGenerator\Commands;
 
-use Exception;
-use Illuminate\Console\Command;
-use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithUser;
 use Blok\LaravelPackageGenerator\Commands\Traits\ChangesComposerJson;
 use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithComposer;
+use Blok\LaravelPackageGenerator\Commands\Traits\InteractsWithUser;
 use Blok\LaravelPackageGenerator\Commands\Traits\ManipulatesPackageFolder;
+use Exception;
+use Illuminate\Console\Command;
 
 class PackageRemove extends Command
 {

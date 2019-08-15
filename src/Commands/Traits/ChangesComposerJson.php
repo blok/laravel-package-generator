@@ -2,9 +2,9 @@
 
 namespace Blok\LaravelPackageGenerator\Commands\Traits;
 
-use Illuminate\Support\Facades\File;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Blok\LaravelPackageGenerator\Exceptions\RuntimeException;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Support\Facades\File;
 
 trait ChangesComposerJson
 {
@@ -35,7 +35,7 @@ trait ChangesComposerJson
 
             $composerJson['repositories'][] = (object) [
                 'type' => 'path',
-                'url' => $relPackagePath,
+                'url'  => $relPackagePath,
             ];
         } else {
             $this->info('Composer repository for package is already registered.');
@@ -84,23 +84,23 @@ trait ChangesComposerJson
     /**
      * Load and parse content of composer.json.
      *
-     * @return array
-     *
      * @throws FileNotFoundException
      * @throws RuntimeException
+     *
+     * @return array
      */
     protected function loadComposerJson()
     {
         $composerJsonPath = $this->getComposerJsonPath();
 
-        if (! File::exists($composerJsonPath)) {
+        if (!File::exists($composerJsonPath)) {
             throw new FileNotFoundException('composer.json does not exist');
         }
 
         $composerJsonContent = File::get($composerJsonPath);
         $composerJson = json_decode($composerJsonContent, true);
 
-        if (! is_array($composerJson)) {
+        if (!is_array($composerJson)) {
             throw new RuntimeException("Invalid composer.json file [$composerJsonPath]");
         }
 
