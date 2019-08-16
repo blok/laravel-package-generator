@@ -2,11 +2,11 @@
 
 namespace Blok\LaravelPackageGenerator\Commands\Traits;
 
-use Exception;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\File;
-use Illuminate\View\Engines\PhpEngine;
 use Blok\LaravelPackageGenerator\Exceptions\RuntimeException;
+use Exception;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
+use Illuminate\View\Engines\PhpEngine;
 
 trait CopiesSkeleton
 {
@@ -74,10 +74,10 @@ trait CopiesSkeleton
         $configFilePath = $this->packageBaseDir.'/stubs/config.php';
 
         $filePaths = [
-            $facadeFilePath => "$packagePath/src/Facades/$package.php.tpl",
-            $mainClassFilePath => "$packagePath/src/$package.php.tpl",
+            $facadeFilePath        => "$packagePath/src/Facades/$package.php.tpl",
+            $mainClassFilePath     => "$packagePath/src/$package.php.tpl",
             $mainClassTestFilePath => "$packagePath/tests/{$package}Test.php.tpl",
-            $configFilePath => "$packagePath/config/$packageFolderName.php",
+            $configFilePath        => "$packagePath/config/$packageFolderName.php",
         ];
 
         foreach ($filePaths as $filePath => $destFilePath) {
@@ -89,7 +89,7 @@ trait CopiesSkeleton
      * Substitute all variables in *.tpl files and remove tpl extension.
      *
      * @param string $packagePath
-     * @param array $variables
+     * @param array  $variables
      */
     protected function replaceTemplates($packagePath, $variables)
     {
@@ -98,7 +98,7 @@ trait CopiesSkeleton
         foreach (File::allFiles($packagePath, true) as $filePath) {
             $filePath = realpath($filePath);
 
-            if (! Str::endsWith($filePath, '.tpl')) {
+            if (!Str::endsWith($filePath, '.tpl')) {
                 continue;
             }
 
@@ -129,11 +129,11 @@ trait CopiesSkeleton
     {
         $dirPathOfDestFile = dirname($dest);
 
-        if (! File::exists($dirPathOfDestFile)) {
+        if (!File::exists($dirPathOfDestFile)) {
             File::makeDirectory($dirPathOfDestFile, 0755, true);
         }
 
-        if (! File::exists($dest)) {
+        if (!File::exists($dest)) {
             File::copy($src, $dest);
         }
     }
@@ -166,25 +166,25 @@ trait CopiesSkeleton
         );
 
         return [
-            'vendor' => $vendor,
-            'package' => $package,
-            'vendorFolderName' => $vendorFolderName,
+            'vendor'            => $vendor,
+            'package'           => $package,
+            'vendorFolderName'  => $vendorFolderName,
             'packageFolderName' => $packageFolderName,
-            'packageHumanName' => $packageHumanName,
+            'packageHumanName'  => $packageHumanName,
 
-            'composerName' => "$vendorFolderName/$packageFolderName",
-            'composerDesc' => $composerDescription,
+            'composerName'     => "$vendorFolderName/$packageFolderName",
+            'composerDesc'     => $composerDescription,
             'composerKeywords' => $composerKeywords,
-            'license' => $this->askUser('The package licence?', 'MIT'),
-            'phpVersion' => $this->askUser('Php version constraint?', '>=7.0'),
+            'license'          => $this->askUser('The package licence?', 'MIT'),
+            'phpVersion'       => $this->askUser('Php version constraint?', '>=7.0'),
 
-            'aliasName' => $packageFolderName,
+            'aliasName'      => $packageFolderName,
             'configFileName' => $packageFolderName,
 
             'year' => date('Y'),
 
-            'name' => $this->askUser('Your name?'),
-            'email' => $this->askUser('Your email?'),
+            'name'             => $this->askUser('Your name?'),
+            'email'            => $this->askUser('Your email?'),
             'githubPackageUrl' => "https://github.com/$vendorFolderName/$packageFolderName",
         ];
     }
@@ -195,9 +195,9 @@ trait CopiesSkeleton
      * @param string $configName
      * @param string $default
      *
-     * @return string
-     *
      * @throws RuntimeException
+     *
+     * @return string
      */
     protected function getPathFromConfig($configName, $default)
     {

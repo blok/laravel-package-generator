@@ -2,8 +2,8 @@
 
 namespace Blok\LaravelPackageGenerator;
 
-use Blok\LaravelPackageGenerator\Commands\PackageNew;
 use Blok\LaravelPackageGenerator\Commands\PackageClone;
+use Blok\LaravelPackageGenerator\Commands\PackageNew;
 use Blok\LaravelPackageGenerator\Commands\PackageRemove;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider

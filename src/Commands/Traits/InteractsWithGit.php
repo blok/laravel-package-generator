@@ -2,8 +2,8 @@
 
 namespace Blok\LaravelPackageGenerator\Commands\Traits;
 
-use Illuminate\Support\Facades\File;
 use Blok\LaravelPackageGenerator\Exceptions\RuntimeException;
+use Illuminate\Support\Facades\File;
 
 trait InteractsWithGit
 {
@@ -37,6 +37,7 @@ trait InteractsWithGit
 
     /**
      * Init git repo.
+     *
      * @param string $repoPath
      */
     protected function initRepo($repoPath)
