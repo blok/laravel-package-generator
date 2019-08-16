@@ -53,6 +53,7 @@ trait CopiesSkeleton
         $variables = $this->getVariables(
             $vendor, $package, $vendorFolderName, $packageFolderName
         );
+
         $this->replaceTemplates($packagePath, $variables);
 
         $this->info('Skeleton was successfully copied.');

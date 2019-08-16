@@ -13,10 +13,11 @@
     }
   ],
   "require": {
-    "php": "<?php echo $phpVersion; ?>"
+    "php": ">=7.1.6",
+    "illuminate/support": "^5.5.0"
   },
   "require-dev": {
-
+    "orchestra/testbench": "^3.8.0",
   },
   "autoload": {
     "psr-4": {

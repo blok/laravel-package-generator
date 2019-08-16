@@ -1,7 +1,10 @@
 Laravel package generator
 =========================
 
-[![Build Status](https://travis-ci.org/blok/laravel-package-generator.svg?branch=master)](https://travis-ci.org/blok/laravel-package-generator)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/blok/laravel-package-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/blok/laravel-package-generator/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/blok/laravel-package-generator.svg)](https://packagist.org/packages/blok/laravel-package-generator)
+[![Packagist](https://poser.pugx.org/blok/laravel-package-generator/d/total.svg)](https://packagist.org/packages/blok/laravel-package-generator)
+[![Packagist](https://img.shields.io/packagist/l/blok/laravel-package-generator.svg)](https://packagist.org/packages/blok/laravel-package-generator)
 
 Simple package to quickly generate basic structure for other laravel packages inspired by Alexander Melihov Laravel Package generator.
 
